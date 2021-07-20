@@ -6,5 +6,10 @@ describe DockingStation do
     bike = subject.release_bike # bike = new element(method - release bike)
     expect(bike).to be_working # checking if be_working function shows that the bike is working
   end
+
+  it 'docking a bike' do 
+    bike = subject.docking_bikes
+    expect(bike).to be_instance_of DockingStation
+  end
 end
 
