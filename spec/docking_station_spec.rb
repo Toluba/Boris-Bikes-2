@@ -4,12 +4,15 @@ describe DockingStation do
   
   it 'releases working bikes' do
     bike = subject.release_bike # bike = new element(method - release bike)
-    expect(bike).to be_working # checking if be_working function shows that the bike is working
+    expect(bike).to respond_to(:working?) # checking if be_working function shows that the bike is working
   end
 
   it 'docking a bike' do 
-    bike = subject.docking_bikes
-    expect(bike).to be_instance_of DockingStation
+    bike = Bike.new
+    expect(subject.docking_bikes(bike)).to eq bike
   end
+
+  it { is_expected.to respond_to(:docking_bikes).with(1).argument }
+
 end
 

@@ -3,8 +3,9 @@ class DockingStation
     Bike.new 
   end
 
-  def docking_bikes()
-    @bike = a
+  attr_reader :bike
+  def docking_bikes(bike)
+    @bike = bike
     #Bike class?
   end
 end
